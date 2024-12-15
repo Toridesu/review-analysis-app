@@ -42,6 +42,7 @@
     削除して対処した。
 - "Unknown at rule @tailwind"の警告が出ていた。
   PostCSS Language Support の拡張機能を入れて対処した
+- TailWindのClassNameがコードの整形をすると''になる。今度聞いてみたい。
 
 ## 📚 学習メモ
 
