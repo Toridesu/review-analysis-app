@@ -6,9 +6,9 @@
 
 ## 🔧 開発環境
 
-- Node.js: 20.x
+- Node.js: 22.10.0
 - パッケージマネージャー: npm
-- エディタ: VSCode
+- エディタ: Cursor
 
 ### 使用している主要パッケージ
 
@@ -20,10 +20,10 @@
 ## 📖 参考にした資料
 
 - ドキュメント
-https://cmmnty-docs.notion.site/React-shadcn-ui-155111c24256805fbb80dcf027938e89
+  https://cmmnty-docs.notion.site/React-shadcn-ui-155111c24256805fbb80dcf027938e89
 - Tailwind サービス
-https://zenn.dev/d0ne1s/articles/c4909f32ce8fed5ac251
-- 
+  https://zenn.dev/d0ne1s/articles/c4909f32ce8fed5ac251
+-
 
 ## 💡 学びのポイント
 
@@ -33,11 +33,17 @@ https://zenn.dev/d0ne1s/articles/c4909f32ce8fed5ac251
 
 ### つまずきポイント
 
-- ここにハマったポイントとその解決方法を記録していく
+- 環境構築での初期エラー
+  - tsconfig.app .node にエラー。
+    "incremental": true, // この行を追加 これで対処した。
+  - "noUncheckedSideEffectImports": true 　ここでエラー出てた。
+    削除して対処した。
+- 
 
 ## 📚 学習メモ
 
 - 2024/12/13
   - 前回のハンズオンで学んだものを一から作ってみる。
-- 2024/12/14
+  - shadcn/ui のサイドバー作成で躓いた。今日は終了(18:38)
+- 2024/12/15
   - 新しいトピックや進捗をここに記入します。
