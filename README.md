@@ -30,6 +30,8 @@
 - git init
 - git add .
 - git commit -m "React の導入"
+- git remote add origin [GitHubのリポジトリURL]
+- git push origin main(初回の場合:git push -u origin main)
 
 ### つまずきポイント
 
