@@ -30,7 +30,7 @@
 - git init
 - git add .
 - git commit -m "React の導入"
-- git remote add origin [GitHubのリポジトリURL]
+- git remote add origin [GitHub のリポジトリ URL]
 - git push origin main(初回の場合:git push -u origin main)
 
 ### つまずきポイント
@@ -42,7 +42,7 @@
     削除して対処した。
 - "Unknown at rule @tailwind"の警告が出ていた。
   PostCSS Language Support の拡張機能を入れて対処した
-- TailWindのClassNameがコードの整形をすると''になる。今度聞いてみたい。
+- TailWind の ClassName がコードの整形をすると''になる。今度聞いてみたい。
 
 ## 📚 学習メモ
 
@@ -50,4 +50,6 @@
   - 前回のハンズオンで学んだものを一から作ってみる。
   - shadcn/ui のサイドバー作成で躓いた。今日は終了(18:38)
 - 2024/12/15
-  - 新しいトピックや進捗をここに記入します。
+  - Footer とレビュー部分作った。
+- 2024/12/17
+  - 少しだけ進めた。tab の使い方。

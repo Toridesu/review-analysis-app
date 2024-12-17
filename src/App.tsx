@@ -1,6 +1,6 @@
 import Footer from './components/Footer';
 import ReviewList from './components/ReviewList';
-import { ReviewSummary } from './components/ReviewSummary';
+import ReviewSummary from './components/ReviewSummary';
 
 const SummarySection = () => {
   return (
@@ -21,7 +21,7 @@ const ReviewListSection = () => {
 function App() {
   return (
     <>
-      <div className='flex justify-between py-6 px-4'>
+      <div className='h-[calc(100vh-68px)] flex gap-12 pt-12'>
         <SummarySection />
         <ReviewListSection />
       </div>

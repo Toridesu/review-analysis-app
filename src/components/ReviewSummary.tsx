@@ -1,18 +1,19 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import AISummaryCard from "./AISummaryCard";
 
-export const ReviewSummary = () => {
+const ReviewSummary = () => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
-    </Card>
+    <div className="space-y-8">
+      <p className="text-sm font-semibold uppercase tracking-wide text-indigo-500">
+        testimonial
+      </p>
+      <h1 className="text-5xl font-bold leading-tight text-gray-900">
+        参加者からの
+        <br />
+        率直なレビューを読む
+      </h1>
+      <AISummaryCard />
+    </div>
   );
 };
+
+export default ReviewSummary;
