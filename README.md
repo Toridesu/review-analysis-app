@@ -38,7 +38,7 @@
 - 環境構築での初期エラー
   - tsconfig.app .node にエラー。
     "incremental": true, // この行を追加 これで対処した。
-  - "noUncheckedSideEffectImports": true 　ここでエラー出てた。
+  - "noUncheckedSideEffectImports": true ここでエラー出てた。
     削除して対処した。
 - "Unknown at rule @tailwind"の警告が出ていた。
   PostCSS Language Support の拡張機能を入れて対処した
@@ -53,3 +53,5 @@
   - Footer とレビュー部分作った。
 - 2024/12/17
   - 少しだけ進めた。tab の使い方。
+- 2025/01/07 
+  - 再開
