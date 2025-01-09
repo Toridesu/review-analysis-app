@@ -1,6 +1,6 @@
-import { mockReviews } from "@/constants/data";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { useState } from "react";
+import { mockReviews } from '@/constants/data';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { useState } from 'react';
 
 /**
  * 平均評価を計算する関数
@@ -24,14 +24,15 @@ type AISummary = {
 
 export default function useAISummaryLogic() {
   const [AISummary, setAISummary] = useState<null | AISummary>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const averageRating = calculateAverageRating(mockReviews);
 
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
   const prompt = `Write a summary of the reviews for the tech event.
-      The event's average rating is ${averageRating} out of 5 stars. 
+      The event's average ratng is ${averageRating} out of 5 stars. 
       Your goal is to highlight the most common themes and sentiments expressed by customers.
       If multiple themes are present, try to capture the most important ones.
       If no patterns emerge but there is a shared sentiment, capture that instead.
@@ -40,7 +41,7 @@ export default function useAISummaryLogic() {
       Don't include any word count or character count.
       No need to reference which reviews you're summarizing.
       Do not reference the star rating in the summary.
-      And the final results should be output in Japanese.
+      And the final results shiould be output in Japanese.
   
       Output should be only plain text, like a single JSON object, such as:
       {
@@ -55,16 +56,20 @@ export default function useAISummaryLogic() {
       Accompanying the output is an array of 1 to 3 concise "positivePoints" and "negativePoints".
   
       The customer reviews to summarize are as follows:
-      ${mockReviews
-        .map((review, i) => `Review ${i + 1}:\n${review.content}`)
-        .join("\n\n")}`;
+      ${mockReviews.map((review, i) => `Review ${i + 1}:\n${review.content}`).join('\n\n')}`;
 
   const handleClick = async () => {
-    const result = await model.generateContent(prompt);
-    // alert(result.response.text());
-    const jsonData = JSON.parse(result.response.text());
-    setAISummary(jsonData);
+    try {
+      setIsLoading(true);
+      const result = await model.generateContent(prompt);
+      const jsonData = JSON.parse(result.response.text());
+      setAISummary(jsonData);
+    } catch (error) {
+      console.error('Error generating AI summary:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  return { AISummary, averageRating, handleClick };
+  return { AISummary, averageRating, handleClick, isLoading };
 }

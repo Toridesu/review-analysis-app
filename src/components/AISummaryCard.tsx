@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ThumbsUp, ThumbsDown, Pen } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, Pen, Loader2 } from 'lucide-react';
 import StarRating from './StarRating';
 
 import { Button } from './ui/button';
@@ -9,7 +9,7 @@ import useAISummaryLogic from '@/hooks/useAISummaryLogic';
 
 const AISummaryCard = () => {
   // カスタムフックの呼び出し
-  const { averageRating, handleClick, AISummary } = useAISummaryLogic();
+  const { averageRating, handleClick, AISummary, isLoading } = useAISummaryLogic();
 
   return (
     <Card className='bg-gradient-to-br border-indigo-300 from-white to-indigo-50'>
@@ -25,7 +25,10 @@ const AISummaryCard = () => {
       {/* AI からの res があるかどうかで条件分岐 */}
       {AISummary === null ? (
         <CardContent className='flex justify-center'>
-          <Button onClick={handleClick}>Generate</Button>
+          <Button onClick={handleClick} disabled={isLoading} className='flex items-center gap-2'>
+            {isLoading ? <Loader2 className='h-4 w-4 animate-spin' /> : <Pen className='h-4 w-4' />}
+            {isLoading ? '生成中...' : '生成する'}
+          </Button>
         </CardContent>
       ) : (
         <CardContent>
