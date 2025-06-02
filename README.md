@@ -1,60 +1,58 @@
-# React + TypeScript 学習プロジェクト
+# [レビュー掲載アプリ]
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.6.2-blue)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.3.1-61dafb)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-6.0.1-646cff)](https://vitejs.dev/)
+## スクリーンショット
 
-## 🔧 開発環境
+![プロジェクトのスクリーンショット](https://github.com/user-attachments/assets/010689bb-2a24-457a-a5bc-d8427cdb3b78)
 
-- Node.js: 22.10.0
-- パッケージマネージャー: npm
-- エディタ: Cursor
+## 概要
 
-### 使用している主要パッケージ
+[このプロジェクトでは、レビュー掲載アプリを構築します。 レビューの一覧を表示するだけでなく、アプリ内に生成 AI を組み込み、全てのレビューを踏まえた要約を表示します。]
 
-- react: 18.3.1
-- typescript: 5.6.2
-- vite: 6.0.1
-- eslint: 9.15.0
+## 主な機能
 
-## 📖 参考にした資料
+このレビュー掲載アプリでは、以下の主要な機能を提供します。
 
-- ドキュメント
-  https://cmmnty-docs.notion.site/React-shadcn-ui-155111c24256805fbb80dcf027938e89
-- Tailwind サービス
-  https://zenn.dev/d0ne1s/articles/c4909f32ce8fed5ac251
--
+- **AI によるレビュー要約:**
+  - Google Gemini API を活用し、複数のレビューを分析して、その要点をまとめたサマリーを自動生成・表示します。
+- **レスポンシブデザイン:**
+  - デスクトップ、タブレット、スマートフォンなど、様々なデバイスの画面サイズに対応し、快適な閲覧体験を提供します。
 
-## 💡 学びのポイント
+## 技術スタック
 
-- git init
-- git add .
-- git commit -m "React の導入"
-- git remote add origin [GitHub のリポジトリ URL]
-- git push origin main(初回の場合:git push -u origin main)
+このプロジェクトでは、以下の技術を使用しています。
 
-### つまずきポイント
+- **フロントエンド:**
+  - [React](https://react.dev/) - ユーザーインターフェースを構築するための JavaScript ライブラリ
+  - [TypeScript](https://www.typescriptlang.org/) - JavaScript に静的型付けを追加した言語
+  - [Vite](https://vitejs.dev/) - 高速なフロントエンド開発ビルドツール
+- **UI コンポーネント & スタイリング:**
+  - [shadcn/ui](https://ui.shadcn.com/) - Radix UI と Tailwind CSS をベースにした再利用可能な UI コンポーネント群
+  - [Tailwind CSS](https://tailwindcss.com/) - ユーティリティファーストの CSS フレームワーク
+  - [Lucide React](https://lucide.dev/) - シンプルで美しいアイコンライブラリ
+- **AI 機能:**
+  - [Google Gemini API (`@google/generative-ai`)](https://ai.google.dev/) - レビュー要約機能のための生成 AI モデル
+- **開発ツール & ユーティリティ:**
+  - ESLint - コードの静的解析
+  - `class-variance-authority`, `clsx`, `tailwind-merge` - スタイルとクラス名管理の効率化
+  - `tailwindcss-animate` - Tailwind CSS でのアニメーション実装
 
-- 環境構築での初期エラー
-  - tsconfig.app .node にエラー。
-    "incremental": true, // この行を追加 これで対処した。
-  - "noUncheckedSideEffectImports": true ここでエラー出てた。
-    削除して対処した。
-- "Unknown at rule @tailwind"の警告が出ていた。
-  PostCSS Language Support の拡張機能を入れて対処した
-- TailWind の ClassName がコードの整形をすると''になる。今度聞いてみたい。
+## インストールと実行方法
 
-## 📚 学習メモ
-
-- 2024/12/13
-  - 前回のハンズオンで学んだものを一から作ってみる。
-  - shadcn/ui のサイドバー作成で躓いた。今日は終了(18:38)
-- 2024/12/15
-  - Footer とレビュー部分作った。
-- 2024/12/17
-  - 少しだけ進めた。tab の使い方。
-- 2025/01/07
-  - 再開
-  - 要約部分作成
-- 2025/01/09
-  - 完成
+1.  **リポジトリをクローンします:**
+    ```bash
+    git clone [リポジトリのURL]
+    cd [リポジトリ名]
+    ```
+2.  **依存関係をインストールします:**
+    ```bash
+    npm install
+    # または
+    # yarn install
+    ```
+3.  **開発サーバーを起動します:**
+    ```bash
+    npm run dev
+    # または
+    # yarn dev
+    ```
+    ブラウザで `http://localhost:5173` (Vite のデフォルト) など、表示された URL にアクセスしてください。
